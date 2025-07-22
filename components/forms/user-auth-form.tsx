@@ -39,7 +39,7 @@ export function UserAuthForm({ className, type, ...props }: UserAuthFormProps) {
     const signInResult = await signIn("resend", {
       email: data.email.toLowerCase(),
       redirect: false,
-      callbackUrl: searchParams?.get("from") || "/dashboard",
+      callbackUrl: searchParams?.get("from") || "/eldermate",
     });
 
     setIsLoading(false);
@@ -102,7 +102,7 @@ export function UserAuthForm({ className, type, ...props }: UserAuthFormProps) {
         className={cn(buttonVariants({ variant: "outline" }))}
         onClick={() => {
           setIsGoogleLoading(true);
-          signIn("google");
+          signIn("google", { callbackUrl: "/eldermate" });
         }}
         disabled={isLoading || isGoogleLoading}
       >

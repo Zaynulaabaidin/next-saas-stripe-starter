@@ -1,0 +1,415 @@
+/* ElderMate Dashboard Styles */
+
+.container {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 30px;
+  max-width: 800px;
+  width: 100%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+/* Body styles are now in the container for better module encapsulation */
+.container {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 30px;
+  max-width: 800px;
+  width: 100%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  margin: 20px auto;
+  min-height: calc(100vh - 40px);
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #f5f7ff 0%, #f3f4ff 100%);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  color: #333;
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.header p {
+  color: #666;
+  font-size: 1.2em;
+}
+
+.timeDisplay {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #667eea;
+  margin-top: 10px;
+}
+
+.mainInterface {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.voiceSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  border-radius: 15px;
+  padding: 30px;
+  color: white;
+  text-align: center;
+}
+
+.voiceButton {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3em;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.voiceButton:hover {
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.voiceButton.active {
+  animation: pulse 1.5s infinite;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.transcription {
+  margin-top: 15px;
+  font-style: italic;
+  min-height: 20px;
+}
+
+.statusPanel {
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.statusItem {
+  margin-bottom: 15px;
+  padding: 10px;
+  border-left: 4px solid #667eea;
+  background: #f8f9ff;
+  border-radius: 5px;
+}
+
+.conversationArea {
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.message {
+  margin-bottom: 15px;
+  padding: 10px 15px;
+  border-radius: 10px;
+  animation: fadeIn 0.5s ease;
+}
+
+.userMessage {
+  background: #667eea;
+  color: white;
+  margin-left: 20%;
+}
+
+.aiMessage {
+  background: #f0f0f0;
+  color: #333;
+  margin-right: 20%;
+}
+
+@keyframes fadeIn {
+  from { 
+    opacity: 0; 
+    transform: translateY(10px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.featureCard {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.featureCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.featureIcon {
+  font-size: 2.5em;
+  margin-bottom: 15px;
+}
+
+.emergencyPanel {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+  color: white;
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+}
+
+.emergencyButton {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid white;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 10px;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.emergencyButton:hover {
+  background: white;
+  color: #ff6b6b;
+}
+
+/* Modal Styles */
+.modal {
+  display: block;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+}
+
+.modalContent {
+  background: white;
+  margin: 15% auto;
+  padding: 30px;
+  border-radius: 15px;
+  width: 80%;
+  max-width: 500px;
+  text-align: center;
+  animation: modalSlide 0.3s ease;
+  position: relative;
+}
+
+@keyframes modalSlide {
+  from { 
+    transform: translateY(-50px); 
+    opacity: 0; 
+  }
+  to { 
+    transform: translateY(0); 
+    opacity: 1; 
+  }
+}
+
+.closeModal {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  line-height: 1;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+}
+
+.closeModal:hover {
+  color: #000;
+}
+
+.reminderList {
+  background: white;
+  border-radius: 10px;
+  padding: 15px;
+  margin-top: 10px;
+}
+
+.reminderItem {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.reminderItem:last-child {
+  border-bottom: none;
+}
+
+.entertainmentGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.entertainmentGrid button {
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  font-size: 1em;
+  transition: all 0.3s ease;
+}
+
+.entertainmentGrid button:nth-child(1) {
+  background: #667eea;
+}
+
+.entertainmentGrid button:nth-child(2) {
+  background: #f093fb;
+}
+
+.entertainmentGrid button:nth-child(3) {
+  background: #4ecdc4;
+}
+
+.entertainmentGrid button:nth-child(4) {
+  background: #45b7d1;
+}
+
+.entertainmentGrid button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.gamesGrid {
+  margin-top: 20px;
+}
+
+.gamesGrid button {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  font-size: 1em;
+  transition: all 0.3s ease;
+}
+
+.gamesGrid button:nth-child(1) {
+  background: #667eea;
+}
+
+.gamesGrid button:nth-child(2) {
+  background: #f093fb;
+}
+
+.gamesGrid button:nth-child(3) {
+  background: #4ecdc4;
+}
+
+.gamesGrid button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.familyMessages {
+  text-align: left;
+  margin-top: 20px;
+}
+
+.familyMessage {
+  background: #f0f0f0;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .mainInterface {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .featuresGrid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+  }
+  
+  .container {
+    padding: 20px;
+  }
+
+  .entertainmentGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .modalContent {
+    width: 90%;
+    margin: 10% auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .header h1 {
+    font-size: 2em;
+  }
+
+  .voiceButton {
+    width: 100px;
+    height: 100px;
+    font-size: 2.5em;
+  }
+
+  .featureIcon {
+    font-size: 2em;
+  }
+}
